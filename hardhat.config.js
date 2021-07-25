@@ -15,6 +15,7 @@ require("./tasks/block-number")
 require("./tasks/random-number-consumer")
 require("./tasks/price-consumer")
 require("./tasks/api-consumer")
+require('solidity-coverage')
 
 
 require('dotenv').config()
@@ -33,17 +34,18 @@ module.exports = {
         hardhat: {
             // // If you want to do some forking, uncomment this
             // forking: {
-            //   url: MAINNET_RPC_URL
+            //   url: MAINNET_RPC_URL,
+            //   
             // }
         },
         localhost: {
         },
         kovan: {
             url: KOVAN_RPC_URL,
-            // accounts: [PRIVATE_KEY],
-            accounts: {
-                mnemonic: MNEMONIC,
-            },
+             accounts: [PRIVATE_KEY],
+            //accounts: {
+            //    mnemonic: MNEMONIC,
+            //},
             saveDeployments: true,
         },
         rinkeby: {
